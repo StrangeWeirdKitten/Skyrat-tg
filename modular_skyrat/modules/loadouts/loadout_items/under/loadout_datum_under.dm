@@ -517,6 +517,10 @@ GLOBAL_LIST_INIT(loadout_miscunders, generate_loadout_items(/datum/loadout_item/
 	name = "Blastwave Uniform"
 	item_path = /obj/item/clothing/under/blastwave
 
+/datum/loadout_item/under/miscellaneous/catsuit
+	name = "Latex Catsuit"
+	item_path = /obj/item/clothing/under/misc/latex_catsuit
+
 //HALLOWEEN
 /datum/loadout_item/under/miscellaneous/pj_blood
 	name = "Blood-red Pajamas"
@@ -906,7 +910,6 @@ GLOBAL_LIST_INIT(loadout_miscunders, generate_loadout_items(/datum/loadout_item/
 	item_path = /obj/item/clothing/under/rank/azulean/upstart/skirt
 	restricted_roles = list(JOB_CAPTAIN, JOB_NT_REP)
 	restricted_species = list(SPECIES_AKULA)
-
 /// DONATOR
 /datum/loadout_item/under/donator
 	donator_only = TRUE

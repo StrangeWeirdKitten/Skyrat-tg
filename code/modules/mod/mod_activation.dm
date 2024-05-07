@@ -92,6 +92,10 @@
 			span_notice("[part] deploy[part.p_s()] with a mechanical hiss."),
 			span_hear("You hear a mechanical hiss."))
 		playsound(src, 'sound/mecha/mechmove03.ogg', 25, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
+		// SKYRAT EDIT - ASH ACC EXPLOIT FIX
+		for(var/obj/item/mod/module/ash_accretion/ashie in modules)
+			ashie.on_suit_activation()
+		// SKYRAT EDIT
 		return TRUE
 	else
 		if(!user)
@@ -119,6 +123,9 @@
 	for(var/obj/item/mod/module/module as anything in modules)
 		if(module.active)
 			module.on_deactivation(display_message = !!user)
+	if(istype(module, /obj/item/mod/module/ash_accretion)) // Ash acc exploit fix
+		var/obj/item/mod/module/ash_accretion/ashie = locate() in modules
+		ashie.on_suit_deactivation()
 	// SKYRAT EDIT END
 	if(!user)
 		return
